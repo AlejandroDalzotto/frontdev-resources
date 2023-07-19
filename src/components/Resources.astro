@@ -1,11 +1,12 @@
 ---
 import Logo from "./Logo.astro";
-type NavItem = {
+import TextDivider from "./TextDivider.astro";
+type ResourceItem = {
   id: string;
   name: string;
 };
 
-const navItems: NavItem[] = [
+const resItems: ResourceItem[] = [
   {
     id: "libraries",
     name: "Librerías",
@@ -31,10 +32,6 @@ const navItems: NavItem[] = [
     name: "Tipografias",
   },
   {
-    id: "mockups",
-    name: "Mockups",
-  },
-  {
     id: "illustrations",
     name: "Ilustraciones",
   },
@@ -44,31 +41,53 @@ const navItems: NavItem[] = [
   },
   {
     id: "draw",
-    name: "Dibujar",
+    name: "Diagramar",
   },
 ];
+
+
 ---
 
-<header
-  id="navbar"
-  class="fixed top-0 backdrop-blur z-30 w-full pt-16 px-10 flex items-center transition-all duration-500"
->
-  <Logo />
-  <nav class="flex-grow relative">
-    <ul class="flex items-center justify-end w-full relative">
+<header id="navbar" class="w-screen h-screen flex">
+  <div
+    class="relative w-1/4 px-10 flex flex-col gap-y-10 justify-center items-center"
+  >
+    <Logo />
+    <p class="text-xl text-center mb-5 text-neutral-50">
+      Frontdev es una página donde podras encontrar una colección de recursos
+      que te pueden llegar a ser de utilidad en tu día a día haciendo desarrollo
+      Frontend.
+    </p>
+    <TextDivider />
+    <p class="text-xl text-center text-neutral-50">
+      Diseñada por <a
+        href="https://alejandrodalzotto-portfolio.vercel.app/"
+        class="font-marck text-2xl transition-colors hover:text-rose-600"
+        >Alejandro Dalzotto</a
+      >
+    </p>
+    <TextDivider />
+    <a
+      class="w-10 h-10 flex items-center justify-center"
+      href="https://github.com/AlejandroDalzotto/frontdev-resources"
+    >
+      <svg class="h-10 w-10 fill-neutral-50">
+        <use xlink:href="sprites.svg#github"></use>
+      </svg>
+    </a>
+  </div>
+  <nav class="relative w-3/4">
+    <ul
+      class="grid grid-cols-3 p-40 place-content-center gap-10 w-full h-full relative"
+    >
       {
-        navItems.map(({ id, name }) => {
+        resItems.map(({ id, name }) => {
           return (
-            <li class="relative w-32 h-32 flex flex-col items-center justify-center py-4 px-6">
+            <li class="cursor-pointer relative w-auto h-auto flex flex-col items-center justify-center py-4 px-6 transition-opacity opacity-70 hover:opacity-100">
               <svg class="w-full fill-neutral-50">
                 <use xlink:href={`sprites.svg#${id}`} />
               </svg>
-              <a
-                href={`#${id}`}
-                class="font-marck text-xl text-neutral-50 mt-5"
-              >
-                {name}
-              </a>
+              <p class="font-marck text-4xl text-neutral-50 mt-5">{name}</p>
             </li>
           );
         })

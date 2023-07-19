@@ -1,7 +1,6 @@
 ---
-import LandingHero from "../components/LandingHero.astro";
-import LibrariesSection from "../components/LibrariesSection.astro";
-import Navbar from "../components/Navbar.astro";
+import IconsSection from "../components/IconsSection.astro";
+import Resources from "../components/Resources.astro";
 ---
 
 <html
@@ -15,11 +14,8 @@ import Navbar from "../components/Navbar.astro";
     <meta name="generator" content={Astro.generator} />
     <title>Frontdev Resources</title>
   </head>
-  <body class="scroll w-full h-full">
-    <Navbar />
-
-    <LandingHero />
-    <LibrariesSection />
+  <body>
+    <Resources />
   </body>
 </html>
 
@@ -27,6 +23,13 @@ import Navbar from "../components/Navbar.astro";
   @font-face {
     font-family: "Marck Script";
     src: url("/fonts/MarckScript-Regular.ttf");
+    font-weight: normal | bold;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "Vercetti Regular";
+    src: url("/fonts/Vercetti-Regular.ttf");
     font-weight: normal | bold;
     font-style: normal;
   }
