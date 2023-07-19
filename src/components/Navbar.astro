@@ -1,0 +1,108 @@
+---
+import Logo from "./Logo.astro";
+type NavItem = {
+  id: string;
+  name: string;
+};
+
+const navItems: NavItem[] = [
+  {
+    id: "libraries",
+    name: "Librerías",
+  },
+  {
+    id: "icons",
+    name: "Iconos",
+  },
+  {
+    id: "tools",
+    name: "Herramientas",
+  },
+  {
+    id: "colors",
+    name: "Colores",
+  },
+  {
+    id: "gradients",
+    name: "Gradientes",
+  },
+  {
+    id: "typography",
+    name: "Tipografias",
+  },
+  {
+    id: "mockups",
+    name: "Mockups",
+  },
+  {
+    id: "illustrations",
+    name: "Ilustraciones",
+  },
+  {
+    id: "images",
+    name: "Imagenes",
+  },
+  {
+    id: "draw",
+    name: "Dibujar",
+  },
+];
+---
+
+<header
+  id="navbar"
+  class="fixed top-0 backdrop-blur z-30 w-full pt-16 px-10 flex items-center transition-all duration-500"
+>
+  <Logo />
+  <nav class="flex-grow relative">
+    <ul class="flex items-center justify-end w-full relative">
+      {
+        navItems.map(({ id, name }) => {
+          return (
+            <li class="relative w-32 h-32 flex flex-col items-center justify-center py-4 px-6">
+              <svg class="w-full fill-neutral-50">
+                <use xlink:href={`sprites.svg#${id}`} />
+              </svg>
+              <a
+                href={`#${id}`}
+                class="font-marck text-xl text-neutral-50 mt-5"
+              >
+                {name}
+              </a>
+            </li>
+          );
+        })
+      }
+    </ul>
+  </nav>
+
+  <div
+    id="menu-backdrop"
+    class="opacity-0 rounded-lg -z-10 absolute bg-black/25 left-[var(--left)] top-[var(--top)] w-[var(--width)] h-[var(--height)] transition-all duration-300 ease-in-out"
+  >
+  </div>
+</header>
+
+<script>
+  const $listItem = document.querySelectorAll("#navbar li");
+  const $menuBackDrop = document.querySelector(
+    "#menu-backdrop"
+  ) as HTMLDivElement;
+
+  $listItem.forEach((item) => {
+    item.addEventListener("mouseenter", () => {
+      const { left, top, width, height } = item.getBoundingClientRect();
+      $menuBackDrop.style.setProperty("--left", `${left}px`);
+      $menuBackDrop.style.setProperty("--top", `${top}px`);
+      $menuBackDrop.style.setProperty("--width", `${width}px`);
+      $menuBackDrop.style.setProperty("--height", `${height}px`);
+      $menuBackDrop.style.opacity = "1";
+      $menuBackDrop.style.visibility = "visible";
+    });
+
+    item.addEventListener("mouseleave", () => {
+      $menuBackDrop.style.opacity = "0";
+      $menuBackDrop.style.visibility = "hidden";
+    });
+  });
+</script>

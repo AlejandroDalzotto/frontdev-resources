@@ -1,0 +1,204 @@
+{
+    "libraries": {
+        "animation": [
+            {
+                "name": "Animate On Scroll Library",
+                "description": "Nos permite mostrar animaciones cuando el usuario scrolea hacia abajo.",
+                "link": "https://michalsnik.github.io/aos/"
+            },
+            {
+                "name": "Framer Motion",
+                "description": "Una librería de animación para React, que te permite crear animaciones de alta calidad y transiciones de manera fácil y efectiva en aplicaciones web y móviles.",
+                "link": "https://www.framer.com/motion/"
+            },
+            {
+                "name": "Auto-animate",
+                "description": "Auto-animate es una utilidad de animación directa sin configuración que agrega transiciones suaves a nuestras aplicaciones web. Puede usarse con React, Solid, Vue, Svelte o cualquier otra aplicación de JavaScript.",
+                "link": "https://auto-animate.formkit.com/"
+            },
+            {
+                "name": "Blob animated",
+                "description": "Blob Animated puede crear formas dinámicas y fluidas que cambian de tamaño y de forma en respuesta a la interacción del usuario o a los eventos en tu sitio web.",
+                "link": "https://www.npmjs.com/package/blob-animated"
+            }
+        ],
+        "effects": [
+            {
+                "name": "Rough Notation",
+                "description": "Una librería de JavaScript que te permite agregar anotaciones visuales y efectos de dibujo a elementos HTML en tu sitio web.",
+                "link": "https://roughnotation.com/"
+            },
+            {
+                "name": "Particles.js",
+                "description": "Es una librería muy fácil de usar para crear animaciones de partículas que pueden ser usadas como fondo en una página web.",
+                "link": "https://vincentgarreau.com/particles.js/"
+            }
+        ]
+    },
+    "icons": [
+        {
+            "name": "Font Awesome",
+            "link": "https://fontawesome.com/icons"
+        },
+        {
+            "name": "Google icons",
+            "link": "https://fonts.google.com/icons"
+        },
+        {
+            "name": "React Icons Library",
+            "link": "https://react-icons.github.io/react-icons"
+        },
+        {
+            "name": "Simple Icons",
+            "link": "https://simpleicons.org/"
+        },
+        {
+            "name": "Icons8",
+            "link": "https://iconos8.es/"
+        },
+        {
+            "name": "Iconsax",
+            "link": "https://iconsax.io/"
+        }
+    ],
+    "tools": [
+        {
+            "name": "Squoosh",
+            "description": "",
+            "link": "https://squoosh.app/"
+        },
+        {
+            "name": "Upscale.media",
+            "description": "",
+            "link": "https://www.upscale.media/es"
+        },
+        {
+            "name": "Remove bg",
+            "description": "",
+            "link": "https://www.remove.bg/es"
+        },
+        {
+            "name": "Custom Shape Dividers",
+            "description": "Esta herramienta genera códigos CSS y SVG que pueden ser utilizados para crear efectos de separación entre secciones de contenido en tu sitio.",
+            "link": "https://www.shapedivider.app/"
+        }
+    ],
+    "colors": [
+        {
+            "name": "Coolors",
+            "link": "https://coolors.co/palettes/popular"
+        },
+        {
+            "name": "Khroma",
+            "link": "https://www.khroma.co/"
+        },
+        {
+            "name": "Adobe Color",
+            "link": "https://color.adobe.com/"
+        },
+        {
+            "name": "Color Hunt",
+            "link": "https://colorhunt.co/"
+        }
+    ],
+    "gradients": [
+        {
+            "name": "Shapefactory Gradient",
+            "link": "https://gradient.shapefactory.co/"
+        },
+        {
+            "name": "Tailwind components Gradient Generator",
+            "link": "https://tailwindcomponents.com/gradient-generator/"
+        },
+        {
+            "name": "ColorSpace Gradient",
+            "link": "https://mycolor.space/gradient/"
+        },
+        {
+            "name": "Gradient Hunt",
+            "link": "https://gradienthunt.com/"
+        },
+        {
+            "name": "uiGradients",
+            "link": "https://uigradients.com/"
+        }
+    ],
+    "typography": [
+        {
+            "name": "Google fonts",
+            "link": "https://fonts.google.com/"
+        },
+        {
+            "name": "Free Faces",
+            "link": "https://www.freefaces.gallery/"
+        },
+        {
+            "name": "Font Squirrel",
+            "link": "https://www.fontsquirrel.com/"
+        },
+        {
+            "name": "Dafont",
+            "link": "https://www.dafont.com/es/"
+        },
+        {
+            "name": "Fontshare",
+            "link": "https://www.fontshare.com/"
+        }
+    ],
+    "mockups": [
+        {
+            "name": "Freepik",
+            "link": "https://www.freepik.es/mockups"
+        },
+        {
+            "name": "Unblast",
+            "link": "https://unblast.com/mockups/"
+        },
+        {
+            "name": "Mockupworld",
+            "link": "https://www.mockupworld.co/"
+        }
+    ],
+    "illustrations": [
+        {
+            "name": "Humaaans",
+            "link": "https://www.humaaans.com/"
+        },
+        {
+            "name": "Undraw",
+            "link": "https://undraw.co/illustrations"
+        },
+        {
+            "name": "Open Doodles",
+            "link": "https://www.opendoodles.com/"
+        }
+    ],
+    "images": [
+        {
+            "name": "Unsplash",
+            "link": "https://www.unsplash.com/"
+        },
+        {
+            "name": "Pexels",
+            "link": "https://www.pexels.com/"
+        },
+        {
+            "name": "Adobe Stock",
+            "link": "https://stock.adobe.com/"
+        },
+        {
+            "name": "Freepik",
+            "link": "https://www.freepik.es/"
+        }
+    ],
+    "draw": [
+        {
+            "name": "Excalidraw",
+            "link": "https://excalidraw.com/"
+        },
+        {
+            "name": "Diagrams.net",
+            "link": "https://www.diagrams.net/"
+        }
+    ]
+}

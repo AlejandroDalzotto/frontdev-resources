@@ -1,15 +1,66 @@
 ---
+import LandingHero from "../components/LandingHero.astro";
+import LibrariesSection from "../components/LibrariesSection.astro";
+import Navbar from "../components/Navbar.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+<html
+  lang="en"
+  class="bg-fixed bg-gradient-to-tl from-neutral-800 via-neutral-900 to-neutral-950 min-h-screen"
+>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Frontdev Resources</title>
+  </head>
+  <body class="scroll w-full h-full">
+    <Navbar />
+
+    <LandingHero />
+    <LibrariesSection />
+  </body>
 </html>
+
+<style is:global>
+  @font-face {
+    font-family: "Marck Script";
+    src: url("/fonts/MarckScript-Regular.ttf");
+    font-weight: normal | bold;
+    font-style: normal;
+  }
+
+  :root {
+    --scroll-size: 16px;
+    --scroll-bg: transparent;
+    --scroll-radius: 8px;
+    --scroll-padding: 4px;
+  }
+
+  .scroll::-webkit-scrollbar-track {
+    background-color: var(--scroll-bg);
+  }
+
+  .scroll::-webkit-scrollbar {
+    width: var(--scroll-size);
+    height: var(--scroll-size);
+  }
+
+  .scroll::-webkit-scrollbar-thumb {
+    background-color: #373737;
+    border-radius: var(--scroll-radius);
+    border: var(--scroll-padding) solid transparent;
+    background-clip: content-box;
+  }
+
+  .scroll::-webkit-scrollbar-thumb:hover {
+    background-color: #545454;
+    display: block;
+  }
+
+  html,
+  body {
+    scroll-behavior: smooth;
+  }
+</style>
