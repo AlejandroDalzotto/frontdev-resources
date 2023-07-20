@@ -5,28 +5,28 @@ import Layout from "../pages/layout.astro";
 
 <Layout title="Frontdev Resources">
   <section id="main">
-    <header class="relative w-full h-screen">
-      <div class="w-[75vw] h-full place-content-center">
+    <header class="relative w-full md:h-screen">
+      <div class="md:w-[75vw] h-auto md:h-full place-content-center">
         <div
-          class="relative grid h-full grid-cols-3 grid-rows-3 gap-10 p-10 mx-auto place-content-center aspect-square"
+          class="relative grid w-full md:w-auto md:h-full grid-cols-3 grid-rows-3 gap-4 md:gap-10 p-4 md:p-10 mx-auto place-content-center aspect-square"
         >
           {
             resources.map(({ id, name }) => {
               return (
                 <article class="h-fit aspect-square">
                   <a
-                    class="flex flex-col items-center justify-center p-6 transition-opacity opacity-70 hover:opacity-100"
+                    class="flex flex-col items-center justify-center p-3 md:p-6 transition-opacity opacity-70 hover:opacity-100"
                     href={`/${id}`}
                     aria-label={`Go to ${id}`}
                     title={`Ir a ${name}`}
                     style={`view-transition-name: svg-${id}`}
                   >
-                    <svg class="w-20 fill-neutral-50">
+                    <svg class="w-10 h-10 md:h-auto md:w-20 fill-neutral-50">
                       <use xlink:href={`sprites.svg#${id}`} />
                     </svg>
                     <p
                       style={`view-transition-name: title-${id}`}
-                      class="text-4xl font-marck text-neutral-50"
+                      class="text-2xl 2xl:text-4xl font-marck text-neutral-50"
                     >
                       {name}
                     </p>

@@ -60,17 +60,17 @@
     "tools": [
         {
             "name": "Squoosh",
-            "description": "",
+            "description": "Squoosh es una aplicación web de compresión de imágenes que reduce el tamaño de las imágenes en numerosos formatos.",
             "link": "https://squoosh.app/"
         },
         {
             "name": "Upscale.media",
-            "description": "",
+            "description": "Upscale.media es una herramienta impulsada por IA que aumenta automáticamente la escala de las imágenes en cuestión de segundos.",
             "link": "https://www.upscale.media/es"
         },
         {
-            "name": "Remove bg",
-            "description": "",
+            "name": "Remove.bg",
+            "description": "Remove.bg es un servicio basado en la web para eliminar el fondo de cualquier foto.",
             "link": "https://www.remove.bg/es"
         },
         {

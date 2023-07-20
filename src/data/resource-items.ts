@@ -26,7 +26,7 @@ export const resources: ResourceItem[] = [
   },
   {
     id: "typography",
-    name: "Tipografias",
+    name: "Tipografías",
   },
   {
     id: "illustrations",
@@ -34,7 +34,7 @@ export const resources: ResourceItem[] = [
   },
   {
     id: "images",
-    name: "Imagenes",
+    name: "Imágenes",
   },
   {
     id: "draw",
