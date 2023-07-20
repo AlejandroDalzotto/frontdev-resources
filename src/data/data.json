@@ -1,40 +1,36 @@
 {
-    "libraries": {
-        "animation": [
-            {
-                "name": "Animate On Scroll Library",
-                "description": "Nos permite mostrar animaciones cuando el usuario scrolea hacia abajo.",
-                "link": "https://michalsnik.github.io/aos/"
-            },
-            {
-                "name": "Framer Motion",
-                "description": "Una librería de animación para React, que te permite crear animaciones de alta calidad y transiciones de manera fácil y efectiva en aplicaciones web y móviles.",
-                "link": "https://www.framer.com/motion/"
-            },
-            {
-                "name": "Auto-animate",
-                "description": "Auto-animate es una utilidad de animación directa sin configuración que agrega transiciones suaves a nuestras aplicaciones web. Puede usarse con React, Solid, Vue, Svelte o cualquier otra aplicación de JavaScript.",
-                "link": "https://auto-animate.formkit.com/"
-            },
-            {
-                "name": "Blob animated",
-                "description": "Blob Animated puede crear formas dinámicas y fluidas que cambian de tamaño y de forma en respuesta a la interacción del usuario o a los eventos en tu sitio web.",
-                "link": "https://www.npmjs.com/package/blob-animated"
-            }
-        ],
-        "effects": [
-            {
-                "name": "Rough Notation",
-                "description": "Una librería de JavaScript que te permite agregar anotaciones visuales y efectos de dibujo a elementos HTML en tu sitio web.",
-                "link": "https://roughnotation.com/"
-            },
-            {
-                "name": "Particles.js",
-                "description": "Es una librería muy fácil de usar para crear animaciones de partículas que pueden ser usadas como fondo en una página web.",
-                "link": "https://vincentgarreau.com/particles.js/"
-            }
-        ]
-    },
+    "libraries": [
+        {
+            "name": "Animate On Scroll Library",
+            "description": "Nos permite mostrar animaciones cuando el usuario scrolea hacia abajo.",
+            "link": "https://michalsnik.github.io/aos/"
+        },
+        {
+            "name": "Framer Motion",
+            "description": "Una librería de animación para React, que te permite crear animaciones de alta calidad y transiciones de manera fácil y efectiva en aplicaciones web y móviles.",
+            "link": "https://www.framer.com/motion/"
+        },
+        {
+            "name": "Auto-animate",
+            "description": "Auto-animate es una utilidad de animación directa sin configuración que agrega transiciones suaves a nuestras aplicaciones web. Puede usarse con React, Solid, Vue, Svelte o cualquier otra aplicación de JavaScript.",
+            "link": "https://auto-animate.formkit.com/"
+        },
+        {
+            "name": "Blob animated",
+            "description": "Blob Animated puede crear formas dinámicas y fluidas que cambian de tamaño y de forma en respuesta a la interacción del usuario o a los eventos en tu sitio web.",
+            "link": "https://www.npmjs.com/package/blob-animated"
+        },
+        {
+            "name": "Rough Notation",
+            "description": "Una librería de JavaScript que te permite agregar anotaciones visuales y efectos de dibujo a elementos HTML en tu sitio web.",
+            "link": "https://roughnotation.com/"
+        },
+        {
+            "name": "Particles.js",
+            "description": "Es una librería muy fácil de usar para crear animaciones de partículas que pueden ser usadas como fondo en una página web.",
+            "link": "https://vincentgarreau.com/particles.js/"
+        }
+    ],
     "icons": [
         {
             "name": "Font Awesome",

@@ -4,43 +4,53 @@ import Layout from "../pages/layout.astro";
 ---
 
 <Layout title="Frontdev Resources">
-  <nav id="navbar" class="relative w-full h-screen">
-    <ul
-      class="grid grid-cols-3 p-40 place-content-center gap-10 w-full h-full relative"
+  <section id="main">
+    <header class="relative w-full h-screen">
+      <div class="w-[75vw] h-full place-content-center">
+        <div
+          class="relative grid h-full grid-cols-3 grid-rows-3 gap-10 p-10 mx-auto place-content-center aspect-square"
+        >
+          {
+            resources.map(({ id, name }) => {
+              return (
+                <article class="h-fit aspect-square">
+                  <a
+                    class="flex flex-col items-center justify-center p-6 transition-opacity opacity-70 hover:opacity-100"
+                    href={`/${id}`}
+                    aria-label={`Go to ${id}`}
+                    title={`Ir a ${name}`}
+                    style={`view-transition-name: svg-${id}`}
+                  >
+                    <svg class="w-20 fill-neutral-50">
+                      <use xlink:href={`sprites.svg#${id}`} />
+                    </svg>
+                    <p
+                      style={`view-transition-name: title-${id}`}
+                      class="text-4xl font-marck text-neutral-50"
+                    >
+                      {name}
+                    </p>
+                  </a>
+                </article>
+              );
+            })
+          }
+        </div>
+      </div>
+    </header>
+    <div
+      id="menu-backdrop"
+      class="opacity-0 rounded-lg -z-10 absolute bg-black/25 left-[var(--left)] top-[var(--top)] w-[var(--width)] h-[var(--height)] transition-all duration-300 ease-in-out"
     >
-      {
-        resources.map(({ id, name }) => {
-          return (
-            <li>
-              <a
-                class="relative w-auto h-auto flex flex-col items-center justify-center py-4 px-6 transition-opacity opacity-70 hover:opacity-100"
-                href={`/${id}`}
-                aria-label={`Go to ${id}`}
-                title={`Ir a ${name}`}
-              >
-                <svg class="w-full fill-neutral-50">
-                  <use xlink:href={`sprites.svg#${id}`} />
-                </svg>
-                <p class="font-marck text-4xl text-neutral-50 mt-5">{name}</p>
-              </a>
-            </li>
-          );
-        })
-      }
-    </ul>
-  </nav>
-  <div
-    id="menu-backdrop"
-    class="opacity-0 rounded-lg -z-10 absolute bg-black/25 left-[var(--left)] top-[var(--top)] w-[var(--width)] h-[var(--height)] transition-all duration-300 ease-in-out"
-  >
-  </div>
+    </div>
+  </section>
 </Layout>
 
 <script>
-  const $listItem = document.querySelectorAll("#navbar li");
+  const $listItem = document.querySelectorAll("#main article");
   const $menuBackDrop = document.querySelector(
     "#menu-backdrop"
-  ) as HTMLDivElement;
+  ) as HTMLSpanElement;
 
   $listItem.forEach((item) => {
     item.addEventListener("mouseenter", () => {

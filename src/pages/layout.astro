@@ -28,13 +28,12 @@ const { title } = Astro.props;
 
 <script>
   if (document.startViewTransition) {
-    window.navigation.addEventListener("navigate", (event) => {
+    navigation.addEventListener("navigate", (event) => {
       const toUrl = new URL(event.destination.url);
 
-      const id =
-        toUrl.pathname === "/" ? "content" : toUrl.pathname.substring(1);
+      const id = toUrl.pathname === "/" ? "main" : toUrl.pathname.substring(1);
 
-      const regexString = `<div\\s+id="${id}">([\\s\\S]*?)<\\/div>`;
+      const regexString = `(<section\\s+id="${id}">[\\s\\S]*?<\\/section>)`;
       const regex = new RegExp(regexString, "i");
 
       if (location.origin !== toUrl.origin) return;

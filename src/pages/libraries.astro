@@ -1,11 +1,70 @@
 ---
 import Layout from "../pages/layout.astro";
+
+import data from "../data/data.json";
+
+const { libraries } = data;
 ---
 
 <Layout title="Librerías | Frontdev Resources">
-  <div id="libraries">
-    <div class="w-[75vw] h-screen bg-red-400">
-      <h1>Librerías</h1>
+  <section id="libraries">
+    <div class="w-[75vw] h-screen px-10 py-32 flex relative">
+      <header class="w-1/4 flex flex-col items-center gap-y-10">
+        <div
+          style="view-transition-name: svg-libraries"
+          class="h-fit aspect-square flex flex-col items-center justify-center p-6"
+        >
+          <svg class="w-20 fill-neutral-50">
+            <use xlink:href="sprites.svg#libraries"></use>
+          </svg>
+          <p
+            style="view-transition-name: title-libraries"
+            class="text-4xl font-marck text-neutral-50"
+          >
+            Librerías
+          </p>
+        </div>
+        <p
+          class="animate-fade-up animate-delay-500 text-xl text-center text-neutral-50"
+        >
+          Sumérgete en una extensa colección de librerías de efectos y
+          animaciones para desarrolladores frontend. Potencia tus proyectos web
+          con estas herramientas poderosas que agregarán un toque mágico y
+          cautivador a tus interfaces, brindando experiencias únicas a tus
+          usuarios.
+        </p>
+        <a
+          href="/"
+          class="animate-fade-up animate-delay-700 border border-neutral-50 rounded-lg font-bold text-xl text-neutral-50 py-3 px-6 transition-colors hover:text-neutral-900 hover:bg-neutral-50"
+          >Volver al Inicio</a
+        >
+      </header>
+      <article
+        class="w-3/4 relative flex flex-col gap-y-6 px-10 overflow-y-auto scroll"
+      >
+        {
+          libraries.map((library, idx) => {
+            return (
+              <a
+                href={library.link}
+                style={`animation-delay: ${idx * 2}00ms`}
+                target="_blank"
+                class={`flex justify-between items-center border animate-fade-up border-white rounded-lg py-3 px-10`}
+              >
+                <div class="max-w-[50ch]">
+                  <p class="text-3xl font-marck text-neutral-50">
+                    {library.name}
+                  </p>
+                  <p class="text-xl text-neutral-50">{library.description}</p>
+                </div>
+                <svg class="w-10 fill-neutral-50 stroke">
+                  <use xlink:href="sprites.svg#link" />
+                </svg>
+              </a>
+            );
+          })
+        }
+      </article>
     </div>
-  </div>
+  </section>
 </Layout>
