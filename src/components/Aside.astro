@@ -1,0 +1,35 @@
+---
+import Logo from "./Logo.astro";
+import TextDivider from "./TextDivider.astro";
+---
+
+<div
+  class="relative w-1/4 px-10 flex flex-col gap-y-10 justify-center items-center"
+>
+  <Logo />
+  <p class="text-xl text-center mb-5 text-neutral-50">
+    Frontdev es una página donde podras encontrar una colección de recursos que
+    te pueden llegar a ser de utilidad en tu día a día haciendo desarrollo
+    Frontend.
+  </p>
+  <TextDivider />
+  <p class="text-xl text-center text-neutral-50">
+    Diseñada por <a
+      title="Ir a Portfolio"
+      href="https://alejandrodalzotto-portfolio.vercel.app/"
+      class="font-marck text-2xl transition-colors hover:text-rose-600"
+      >Alejandro Dalzotto</a
+    >
+  </p>
+  <TextDivider />
+  <a
+    title="Ir al repositorio"
+    class="w-10 h-10 flex items-center justify-center transition-transform hover:scale-110"
+    target="_blank"
+    href="https://github.com/AlejandroDalzotto/frontdev-resources"
+  >
+    <svg class="h-10 w-10 fill-neutral-50">
+      <use xlink:href="sprites.svg#github"></use>
+    </svg>
+  </a>
+</div>

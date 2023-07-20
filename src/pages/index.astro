@@ -1,69 +1,61 @@
 ---
-import IconsSection from "../components/IconsSection.astro";
-import Resources from "../components/Resources.astro";
+import { resources } from "../data/resource-items";
+import Layout from "../pages/layout.astro";
 ---
 
-<html
-  lang="en"
-  class="bg-fixed bg-gradient-to-tl from-neutral-800 via-neutral-900 to-neutral-950 min-h-screen"
->
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Frontdev Resources</title>
-  </head>
-  <body>
-    <Resources />
-  </body>
-</html>
+<Layout title="Frontdev Resources">
+  <nav id="navbar" class="relative w-full h-screen">
+    <ul
+      class="grid grid-cols-3 p-40 place-content-center gap-10 w-full h-full relative"
+    >
+      {
+        resources.map(({ id, name }) => {
+          return (
+            <li>
+              <a
+                class="relative w-auto h-auto flex flex-col items-center justify-center py-4 px-6 transition-opacity opacity-70 hover:opacity-100"
+                href={`/${id}`}
+                aria-label={`Go to ${id}`}
+                title={`Ir a ${name}`}
+              >
+                <svg class="w-full fill-neutral-50">
+                  <use xlink:href={`sprites.svg#${id}`} />
+                </svg>
+                <p class="font-marck text-4xl text-neutral-50 mt-5">{name}</p>
+              </a>
+            </li>
+          );
+        })
+      }
+    </ul>
+  </nav>
+  <div
+    id="menu-backdrop"
+    class="opacity-0 rounded-lg -z-10 absolute bg-black/25 left-[var(--left)] top-[var(--top)] w-[var(--width)] h-[var(--height)] transition-all duration-300 ease-in-out"
+  >
+  </div>
+</Layout>
 
-<style is:global>
-  @font-face {
-    font-family: "Marck Script";
-    src: url("/fonts/MarckScript-Regular.ttf");
-    font-weight: normal | bold;
-    font-style: normal;
-  }
+<script>
+  const $listItem = document.querySelectorAll("#navbar li");
+  const $menuBackDrop = document.querySelector(
+    "#menu-backdrop"
+  ) as HTMLDivElement;
 
-  @font-face {
-    font-family: "Vercetti Regular";
-    src: url("/fonts/Vercetti-Regular.ttf");
-    font-weight: normal | bold;
-    font-style: normal;
-  }
+  $listItem.forEach((item) => {
+    item.addEventListener("mouseenter", () => {
+      const { left, top, width, height } = item.getBoundingClientRect();
+      $menuBackDrop.style.setProperty("--left", `${left}px`);
+      $menuBackDrop.style.setProperty("--top", `${top}px`);
+      $menuBackDrop.style.setProperty("--width", `${width}px`);
+      $menuBackDrop.style.setProperty("--height", `${height}px`);
+      $menuBackDrop.style.opacity = "1";
+      $menuBackDrop.style.visibility = "visible";
+    });
 
-  :root {
-    --scroll-size: 16px;
-    --scroll-bg: transparent;
-    --scroll-radius: 8px;
-    --scroll-padding: 4px;
-  }
-
-  .scroll::-webkit-scrollbar-track {
-    background-color: var(--scroll-bg);
-  }
-
-  .scroll::-webkit-scrollbar {
-    width: var(--scroll-size);
-    height: var(--scroll-size);
-  }
-
-  .scroll::-webkit-scrollbar-thumb {
-    background-color: #373737;
-    border-radius: var(--scroll-radius);
-    border: var(--scroll-padding) solid transparent;
-    background-clip: content-box;
-  }
-
-  .scroll::-webkit-scrollbar-thumb:hover {
-    background-color: #545454;
-    display: block;
-  }
-
-  html,
-  body {
-    scroll-behavior: smooth;
-  }
-</style>
+    item.addEventListener("mouseleave", () => {
+      $menuBackDrop.style.opacity = "0";
+      $menuBackDrop.style.visibility = "hidden";
+    });
+  });
+</script>

@@ -1,0 +1,110 @@
+---
+import Aside from "../components/Aside.astro";
+
+const { title } = Astro.props;
+---
+
+<html
+  lang="es"
+  class="bg-fixed bg-gradient-to-tl from-neutral-800 via-neutral-900 to-neutral-950 min-h-screen"
+>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="view-transition" content="same-origin" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <main class="w-screen h-screen flex relative">
+      <Aside />
+      <div id="content">
+        <slot />
+      </div>
+    </main>
+  </body>
+</html>
+
+<script>
+  if (document.startViewTransition) {
+    window.navigation.addEventListener("navigate", (event) => {
+      const toUrl = new URL(event.destination.url);
+
+      const id =
+        toUrl.pathname === "/" ? "content" : toUrl.pathname.substring(1);
+
+      const regexString = `<div\\s+id="${id}">([\\s\\S]*?)<\\/div>`;
+      const regex = new RegExp(regexString, "i");
+
+      if (location.origin !== toUrl.origin) return;
+
+      event.intercept({
+        async handler() {
+          const res = await fetch(toUrl.pathname);
+
+          const text = await res.text();
+          const [, data] = text.match(regex)!;
+
+          document.startViewTransition(() => {
+            document.getElementById("content")!.innerHTML = data;
+          });
+        },
+      });
+    });
+  }
+</script>
+
+<style is:global>
+  @font-face {
+    font-family: "Marck Script";
+    src: url("/fonts/MarckScript-Regular.ttf");
+    font-weight: normal | bold;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "Vercetti Regular";
+    src: url("/fonts/Vercetti-Regular.ttf");
+    font-weight: normal | bold;
+    font-style: normal;
+  }
+
+  :root {
+    --scroll-size: 16px;
+    --scroll-bg: transparent;
+    --scroll-radius: 8px;
+    --scroll-padding: 4px;
+  }
+
+  .scroll::-webkit-scrollbar-track {
+    background-color: var(--scroll-bg);
+  }
+
+  .scroll::-webkit-scrollbar {
+    width: var(--scroll-size);
+    height: var(--scroll-size);
+  }
+
+  .scroll::-webkit-scrollbar-thumb {
+    background-color: #373737;
+    border-radius: var(--scroll-radius);
+    border: var(--scroll-padding) solid transparent;
+    background-clip: content-box;
+  }
+
+  .scroll::-webkit-scrollbar-thumb:hover {
+    background-color: #545454;
+    display: block;
+  }
+
+  html,
+  body {
+    scroll-behavior: smooth;
+  }
+
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: 500ms;
+  }
+</style>
